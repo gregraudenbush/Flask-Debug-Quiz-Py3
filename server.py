@@ -1,4 +1,4 @@
-from flask import Flask, request, redirect, session, flash
+from flask import Flask, request, redirect, session, flash, render_template
 app = Flask(__name__)
 app.secret_key = "unicorns"
 
@@ -8,7 +8,8 @@ app.secret_key = "unicorns"
 #Good Luck Hackers!
 ####################
 
-@app.route('/') 
+@app.route('/')
+
 def index(): 
     
 
@@ -25,7 +26,7 @@ def index():
     return render_template("index.html", info = session['info'])
 
 
-@app.route("/form")
+@app.route("/form", methods=['Post'])
 def form():
     
     if len(request.form['First_Name']) < 1 or len(request.form['Last_Name']) < 1:
@@ -33,7 +34,7 @@ def form():
     else:
         session['info'] = [request.form["First_Name"], request.form['Last_Name'], request.form['FaveSnack']]
 
-
+    
     return redirect('/')
 
 
