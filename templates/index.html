@@ -40,7 +40,7 @@
 
     <h3>
         {% for info in session["info"] %}
-            <p style="color: red">{{info}}</p>
+            <p>{{loop.index0}}. {{info}}</p>
         {% endfor %}
 
     </h3>
