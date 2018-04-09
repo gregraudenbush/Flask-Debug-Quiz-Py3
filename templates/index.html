@@ -37,8 +37,9 @@
         </form>    
     </table>
 
-
-    <h3>{{info}}</h3>
+    {% for info in session['info'] %}
+        <h3>{{info}}</h3>
+    {% endfor %}
     
 </body>
 </html>
