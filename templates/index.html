@@ -38,7 +38,12 @@
     </table>
 
 
-    <h3>{{info}}</h3>
+    <h3>
+        {% for info in session["info"] %}
+            <p style="color: red">{{info}}</p>
+        {% endfor %}
+
+    </h3>
     
 </body>
 </html>
