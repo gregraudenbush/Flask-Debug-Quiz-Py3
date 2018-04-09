@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -37,8 +37,9 @@
         </form>    
     </table>
 
-
-    <h3>{{info}}</h3>
+    {% for x in info: %}
+        <h3>{{x}}</h3>
+    {% endfor %}
     
 </body>
 </html>
