@@ -27,16 +27,12 @@ def index():
 
 @app.route("/form", methods=['POST'])
 def form():
-
-    x = request.form['First_Name']
-    y = request.form['Last_Name']
-    z = request.form['FaveSnack']
-    print(x,y,z)
     
-    if len(x) < 1 or len(y) < 1 or len(z) < 1:
+    
+    if len(request.form['First_Name']) < 1 or len(request.form['Last_Name']) < 1 or len(request.form['FaveSnack']) < 1:
         flash("Please Complete Form")
     else:
-        session['info'] = [x, y, z]
+        session['info'] = [request.form["First_Name"], request.form['Last_Name'], request.form['FaveSnack']]
 
 
     return redirect('/')
