@@ -36,9 +36,9 @@
             </tr>        
         </form>    
     </table>
-
-
-    <h3>{{info}}</h3>
     
+    {% for item in info %}
+    <h3>{{ item }}: {{ info[item] }}</h3>
+    {% endfor %}
 </body>
 </html>
